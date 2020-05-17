@@ -1,6 +1,6 @@
 # `fbackup`, because it's never late to make backups
 
-`fbackup` is a simple tool to take a directory in your filesystem, a Google Drive location and upload every file from the local folder into Google Drive. If the local file modification date is newer than the one reported by Google Drive, the file will be overwritten. Extraneous files (files that exist in Google Drive but not locally) **will be deleted from Google Drive** and the preference is always to persist local files over remote files anytime.
+`fbackup` is a simple tool that takes a directory in your filesystem, a Google Drive destination, and proceeds to upload every file from the local folder into Google Drive. If the local file's modification date is newer than the one reported by Google Drive, **the file will be overwritten prefering the local file** over the remote one. Extraneous files (files that exist in Google Drive but they don't exist in the local folder) **will be deleted from Google Drive** and the preference is always to persist local files over remote files anytime.
 
 ## Usage
 
