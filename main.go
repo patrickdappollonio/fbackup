@@ -18,7 +18,7 @@ var (
 	quietMode    = env.GetBoolean("FBACKUP_QUIET")
 	acctFile     = env.GetDefault("FBACKUP_ACCOUNT_FILE", "")
 	targetFolder = env.GetDefault("FBACKUP_FOLDER", "")
-	destFolder   = env.GetDefault("FBACKUP_DESTINATION", "")
+	destFolder   = env.GetDefault("FBACKUP_DESTINATION_ID", "")
 	everyN       = env.GetDefault("FBACKUP_EVERY", "30m")
 )
 
