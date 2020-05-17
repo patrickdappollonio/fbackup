@@ -8,7 +8,7 @@ import (
 
 func checkFile(folder, name string, isFolder bool) (string, error) {
 	if folder == "" {
-		return "", fmt.Errorf("%s is empty", name)
+		return "", fmt.Errorf("%s not provided", name)
 	}
 
 	if !filepath.IsAbs(folder) {
