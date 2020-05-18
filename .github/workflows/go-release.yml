@@ -1,10 +1,10 @@
 name: Release Go Application
-on:
-  release
+on: push
 
 jobs:
   release-linux:
     runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags')
     steps:
       - name: Clone repository
         uses: actions/checkout@v2.0.0
@@ -17,6 +17,7 @@ jobs:
 
   release-darwin:
     runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags')
     steps:
       - name: Clone repository
         uses: actions/checkout@v2.0.0
@@ -29,6 +30,7 @@ jobs:
 
   release-windows:
     runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags')
     steps:
       - name: Clone repository
         uses: actions/checkout@v2.0.0
