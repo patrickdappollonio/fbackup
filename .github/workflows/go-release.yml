@@ -8,13 +8,24 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v2.0.0
-      - name: Compile and release for Linux amd64
-        uses: ngs/go-release.action@v1.0.1
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.14.3
+      - name: Compile application
+        run: go build -a -ldflags '-extldflags "-static"' -o fbackup .
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOARCH: amd64
           GOOS: linux
-          GO111MODULE: on
+          GOFLAGS: -mod=vendor
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v1-release
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: fbackup
+          asset_name: fbackup_linux_amd64
+          tag: ${{ github.ref }}
+          overwrite: true
 
   release-darwin:
     runs-on: ubuntu-latest
@@ -22,13 +33,24 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v2.0.0
-      - name: Compile and release for Darwin amd64
-        uses: ngs/go-release.action@v1.0.1
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.14.3
+      - name: Compile application
+        run: go build -a -ldflags '-extldflags "-static"' -o fbackup .
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOARCH: amd64
           GOOS: darwin
-          GO111MODULE: on
+          GOFLAGS: -mod=vendor
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v1-release
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: fbackup
+          asset_name: fbackup_darwin_amd64
+          tag: ${{ github.ref }}
+          overwrite: true
 
   release-windows:
     runs-on: ubuntu-latest
@@ -36,10 +58,21 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v2.0.0
-      - name: Compile and release for Windows amd64
-        uses: ngs/go-release.action@v1.0.1
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.14.3
+      - name: Compile application
+        run: go build -a -ldflags '-extldflags "-static"' -o fbackup .
         env:
-          GITHUB_TOKEN: ${{ github.token }}
           GOARCH: amd64
           GOOS: windows
-          GO111MODULE: on
+          GOFLAGS: -mod=vendor
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v1-release
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: fbackup
+          asset_name: fbackup_windows_amd64
+          tag: ${{ github.ref }}
+          overwrite: true
