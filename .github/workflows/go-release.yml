@@ -1,5 +1,5 @@
-on: release
 name: Release Go Application
+on: release
 
 jobs:
   release-linux:
