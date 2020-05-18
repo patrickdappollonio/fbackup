@@ -14,6 +14,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOARCH: amd64
           GOOS: linux
+          GO111MODULE: on
 
   release-darwin:
     runs-on: ubuntu-latest
@@ -27,6 +28,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOARCH: amd64
           GOOS: darwin
+          GO111MODULE: on
 
   release-windows:
     runs-on: ubuntu-latest
@@ -40,3 +42,4 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           GOARCH: amd64
           GOOS: windows
+          GO111MODULE: on
