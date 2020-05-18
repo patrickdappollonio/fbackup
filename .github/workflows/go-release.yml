@@ -1,8 +1,6 @@
 name: Release Go Application
 on:
-  release:
-    types:
-      - created
+  release
 
 jobs:
   release-linux:
