@@ -4,7 +4,7 @@ cloud.google.com/go/compute/metadata
 # github.com/egymgmbh/go-prefix-writer v0.0.0-20180609083313-7326ea162eca
 ## explicit
 github.com/egymgmbh/go-prefix-writer/prefixer
-# github.com/gdrive-org/gdrive v0.0.0-20190729024329-8e12e1c1c961
+# github.com/gdrive-org/gdrive v0.0.0-20210528224146-fb08fe2ff9c0
 ## explicit
 github.com/gdrive-org/gdrive/auth
 github.com/gdrive-org/gdrive/drive
@@ -24,7 +24,9 @@ github.com/googleapis/gax-go/v2
 github.com/patrickdappollonio/env
 # github.com/sabhiram/go-git-ignore v0.0.0-20180611051255-d3107576ba94
 ## explicit
-github.com/sabhiram/go-git-ignore
+# github.com/sabhiram/go-gitignore v0.0.0-20210923224102-525f6e181f06
+## explicit
+github.com/sabhiram/go-gitignore
 # github.com/soniakeys/bits v1.0.0
 github.com/soniakeys/bits
 # github.com/soniakeys/graph v0.0.0
