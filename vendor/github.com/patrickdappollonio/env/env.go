@@ -34,3 +34,17 @@ func GetBoolean(key string) bool {
 
 	return b
 }
+
+// GetInt will return the value as integer if set
+// in the environment. Note that a non-integer value 
+// will return the default value if it can't be parsed.
+func GetInteger(key string, defval int) int {
+	v := GetDefault(key, "")
+	
+	n, err := strconv.Atoi(v)
+	if err != nil {
+		return defval	
+	}
+	
+	return n
+}

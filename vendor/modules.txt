@@ -19,7 +19,7 @@ github.com/golang/protobuf/ptypes/duration
 github.com/golang/protobuf/ptypes/timestamp
 # github.com/googleapis/gax-go/v2 v2.0.5
 github.com/googleapis/gax-go/v2
-# github.com/patrickdappollonio/env v0.0.0-20171106214935-f524381ae5cd
+# github.com/patrickdappollonio/env v0.0.0-20200601021907-7af8b01b3903
 ## explicit
 github.com/patrickdappollonio/env
 # github.com/sabhiram/go-git-ignore v0.0.0-20180611051255-d3107576ba94
