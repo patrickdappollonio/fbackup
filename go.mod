@@ -1,6 +1,6 @@
 module github.com/patrickdappollonio/fbackup
 
-go 1.14
+go 1.19
 
 require (
 	cloud.google.com/go v0.57.0 // indirect
